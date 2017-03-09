@@ -3,3 +3,8 @@
 <p>
   Veröffentlichungsdatum in Deutschland: <%= @game.release_germany %>
 </p>
+
+<p>
+  <%= link_to "#{@game.name} bearbeiten", edit_admin_game_path(@game) %> |
+  <%= link_to "Zurück zur Spieleübersicht", games_path %>
+</p>
