@@ -31,6 +31,13 @@ class Admin::GamesController < ApplicationController
     end
   end
   
+  def destroy
+    @game = Game.find(params[:id])
+    @game.destroy
+    flash[:notice] = "Du hast #{@game.name} erfolgreich gelöscht."
+    redirect_to games_path
+  end
+  
   private
   
     def game_params
