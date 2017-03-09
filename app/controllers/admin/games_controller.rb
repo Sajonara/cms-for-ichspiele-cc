@@ -44,7 +44,7 @@ class Admin::GamesController < ApplicationController
     end
   
     def game_params
-      params.require(:game).permit(:name, :release_germany)
+      params.require(:game).permit(:name, :release_germany, :usk)
     end
   
 end
