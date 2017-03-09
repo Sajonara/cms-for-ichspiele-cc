@@ -10,9 +10,24 @@ class Admin::GamesController < ApplicationController
   def create
     @game = Game.new(game_params)
     if @game.save
+      flash[:notice] = "Du hast erfolgreich ein Spiel hinzugefügt."
       redirect_to game_path(@game)
     else
       render 'new'
+    end
+  end
+  
+  def edit
+    @game = Game.find(params[:id])
+  end
+  
+  def update
+    @game = Game.find(params[:id])
+    if @game.update(game_params)
+      flash[:notice] = "Du hast das Spiel erfolgreich aktualisiert."
+      redirect_to game_path(@game)
+    else
+      render 'edit'
     end
   end
   

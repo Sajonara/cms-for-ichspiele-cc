@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <% unless flash.empty? %>
+    <% if not flash.empty? %>
     <ul>
     <% flash.each do |name, msg| %>
       <li><%= msg %></li>
