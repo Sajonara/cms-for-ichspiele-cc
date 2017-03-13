@@ -1,7 +1,7 @@
-<h1><%= @news.title %></h1>
+<%= render 'shared/page_title', title: @news.title %>
 
 <p>
-  Veröffentlicht am <%= @news.created_at.strftime('%d.%m.%Y') %> von <%= @news.user.name %>
+  Veröffentlicht am <%= @news.created_at.strftime('%d.%m.%Y') %> von <%= @news.user.name %> <%= gravatar_for(@news.user, size: 45) %>
 </p>
 <p>
   <%= @news.content %>
