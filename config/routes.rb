@@ -11,8 +11,14 @@ Rails.application.routes.draw do
   namespace :admin do
     root 'admin#index'
     get 'games/' => 'games#index'
+    # add backend resources for games to the admin panel | define them at controllers/admin/games_controller.rb
     resources :games, only: [:new, :create, :edit, :update, :destroy]
+    # add resources for news to the admin panel | define them at controllers/admin/news_controller.rb
+    resources :news, only: [:new, :create, :edit, :update, :destroy]
   end
   
+  # add frontend resources for games | define them at controllers/games_controller.rb
   resources :games, only: [:index, :show]
+  # add frontend resources for news | define them at controllers/news_controller.rb
+  resources :news, only: [:index, :show]
 end

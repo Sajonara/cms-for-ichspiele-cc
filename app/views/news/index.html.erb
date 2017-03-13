@@ -1,0 +1,9 @@
+<h1>News</h1>
+
+Hier kommt die Übersicht aller Nachrichten hin.
+
+<ul>
+  <% @news.each do |news| %>
+    <li><%= link_to news.title, news_path(news) %></li>
+  <% end %>
+</ul>
