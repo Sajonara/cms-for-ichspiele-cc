@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <% if admin? %>
+    Test
+    <% end %>
     <%= render 'layouts/navigation' %>
     <div class="container">
       <%= render 'layouts/messages' %>

@@ -7,4 +7,9 @@ module ApplicationHelper
     image_tag(gravatar_url, alt: user.name, class: "img-circle")
   end
   
+  # check if the user is in admin panel
+  def admin?
+    controller.class.name.split("::").first=="Admin"
+  end
+  
 end
