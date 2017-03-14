@@ -1,0 +1,28 @@
+<% if @news.errors.any? %>
+  <h2>Es sind folgende Fehler aufgetreten:</h2>
+  <ul>
+    <% @news.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for [:admin, @news] do |f| %>
+
+<p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+</p>
+
+<%= f.hidden_field :user_id %>
+
+<p>
+  <%= f.submit %>
+</p>
+
+<% end %>

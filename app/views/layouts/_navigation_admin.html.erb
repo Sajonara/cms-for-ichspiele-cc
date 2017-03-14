@@ -1,0 +1,18 @@
+<ul id="slide-out" class="side-nav fixed purple lighten-1 grey-text text-lighten-1">
+  <li>test</li>
+  <li>test</li>
+   <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">News<i class="material-icons">arrow_drop_down</i><i class="material-icons right">subject</i></a>
+            <div class="collapsible-body">
+              <ul>
+                <li><%= link_to 'Übersicht', admin_news_index_path %></li>
+                <li><%= link_to 'Neu', new_admin_news_path %></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>

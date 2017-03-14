@@ -2,6 +2,7 @@ class Admin::NewsController < ApplicationController
   before_action :set_news, only: [:edit, :update, :destroy]
   
   def index
+    @news = News.all
   end
   
   def new

@@ -8,15 +8,22 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= 'admin' if admin? %>">
     <% if admin? %>
-    Test
-    <% end %>
-    <%= render 'layouts/navigation' %>
+      <%= render 'layouts/navigation_admin' %>
+      <main>
+        <div class="container">
+          <%= render 'layouts/messages' %>
+          <%= yield %>
+        </div>
+      </main>
+    <% else %>
+      <%= render 'layouts/navigation' %>
     <div class="container">
       <%= render 'layouts/messages' %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
+    <% end %>
   </body>
 </html>
