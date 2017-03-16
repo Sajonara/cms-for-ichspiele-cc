@@ -3,6 +3,7 @@ class CreateGames < ActiveRecord::Migration[5.0]
     create_table :games do |t|
       t.string :name
       t.date :release_germany
+      t.timestamps
     end
   end
 end
