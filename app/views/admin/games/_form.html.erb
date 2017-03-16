@@ -1,11 +1,17 @@
 <% if @game.errors.any? %>
-  <h2>Es sind folgende Fehler aufgetreten:</h2>
-  <ul>
-    <% @game.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+  <div class="card red lighten-4">
+    <%= link_to(new_admin_game_url + "/#", html_options = { class: 'right', data: { dismiss: 'card' } }) do %>
+      &#215;
     <% end %>
-  </ul>
-
+    <div class="card-content">
+      <h5>Es sind folgende Fehler aufgetreten:</h5>
+      <ul>
+        <% @game.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 <% end %>
 
 <%= form_for [:admin, @game] do |f| %>

@@ -1,7 +1,12 @@
 <% if not flash.empty? %>
-    <ul>
-    <% flash.each do |name, msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
+ <div class="card green lighten-4">
+    <div class="card-content">
+      <a href="#" class="close" data-dismiss="card">&#215;</a>
+      <ul>
+      <% flash.each do |name, msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
 <% end %>

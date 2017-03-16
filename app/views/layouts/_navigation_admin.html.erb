@@ -1,17 +1,23 @@
 <ul id="slide-out" class="side-nav fixed purple lighten-1 grey-text text-lighten-1">
-  <li>test</li>
-  <li>test</li>
-   <li class="no-padding">
+  <li>
+    <p class="center">
+      <%= gravatar_for(admin_user, size: 150) %><br>
+      <%= admin_user.name %>
+    </p>
+  </li>
+  <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
-          <li>
-            <a class="collapsible-header">News<i class="material-icons">arrow_drop_down</i><i class="material-icons right">subject</i></a>
+          <% admin_todo.each do |a| %>
+            <li>
+            <a class="collapsible-header"><%= a.capitalize %><i class="material-icons">subject</i><i class="material-icons right">arrow_drop_down</i></a>
             <div class="collapsible-body">
               <ul>
-                <li><%= link_to 'Übersicht', admin_news_index_path %></li>
-                <li><%= link_to 'Neu', new_admin_news_path %></li>
+                <li><%= link_to 'Übersicht', admin_root_url+"/#{a}/index" %></li>
+                <li><%= link_to 'Neu', admin_root_url+"/#{a}/new" %></li>
               </ul>
             </div>
           </li>
+          <% end %>
         </ul>
       </li>
 </ul>
