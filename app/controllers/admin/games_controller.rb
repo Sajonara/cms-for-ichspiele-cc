@@ -2,6 +2,7 @@ class Admin::GamesController < ApplicationController
   before_action :set_game, only: [:edit, :update, :destroy]
   
   def index
+    @games = Game.all
   end
   
   def new
