@@ -1,18 +1,4 @@
-<% if @game.errors.any? %>
-  <div class="card red lighten-4">
-    <%= link_to(new_admin_game_url + "/#", html_options = { class: 'right', data: { dismiss: 'card' } }) do %>
-      &#215;
-    <% end %>
-    <div class="card-content">
-      <h5>Es sind folgende Fehler aufgetreten:</h5>
-      <ul>
-        <% @game.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-<% end %>
+<%= render 'shared/errors', obj: @game, path: 'new_admin_games_url' %>
 
 <%= form_for [:admin, @game] do |f| %>
 
