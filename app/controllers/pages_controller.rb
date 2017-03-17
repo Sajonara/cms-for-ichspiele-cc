@@ -11,4 +11,8 @@ class PagesController < ApplicationController
   def help
     
   end
+  
+  def signup
+    
+  end
 end
