@@ -11,6 +11,7 @@ class Admin::GamesController < ApplicationController
   
   def create
     @game = Game.new(game_params)
+    @game.user = User.first
     if @game.save
       flash[:notice] = "Du hast erfolgreich ein Spiel hinzugefügt."
       redirect_to game_path(@game)
