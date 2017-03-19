@@ -7,11 +7,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Du hast den Nutzer erfolgreich erstellt."
-      redirect_to root_path
+      flash[:notice] = "Herzlich Willkomemen #{@user.name} zu IchSpiele."
+      redirect_to user_path(@user)
     else
-      render 'new'
+      render 'pages/signup'
     end
+  end
+  
+  def show
+    
   end
   
   private
