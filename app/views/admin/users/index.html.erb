@@ -1,0 +1,36 @@
+<h1>Nutzer im Überblick</h1>
+
+<table class="bordered striped highlight responsive-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Erstellt</th>
+      <th>Ansehen</th>
+      <th>Löschen</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= link_to user.name, edit_admin_user_path(user.id) %>
+          </td>
+          <td>
+            <%= user.created_at.strftime('%d.%m.%Y') %>
+          </td>
+          <td>
+            <%= link_to users_path(user), { :class => 'btn-floating purple lighten-1 waves-effect waves-light' } do %>
+              <i class="material-icons">open_in_browser</i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to admin_users_path(user), { :class => 'btn-floating purple lighten-1 waves-effect waves-light' }, method: :delete, data: {confirm: "Bist Du sicher, dass du #{user.name} löschen willst?"} do %>
+              <i class=" material-icons">delete</i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
+
+<%= will_paginate %>

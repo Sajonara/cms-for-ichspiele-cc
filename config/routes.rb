@@ -12,10 +12,13 @@ Rails.application.routes.draw do
     root 'admin#index'
     get 'games/' => 'games#index'
     get 'news/' => 'news#index'
+    get 'users/' => 'users#index'
     # add backend resources for games to the admin panel | define them at controllers/admin/games_controller.rb
     resources :games, only: [:new, :create, :edit, :update, :destroy]
     # add resources for news to the admin panel | define them at controllers/admin/news_controller.rb
     resources :news, only: [:new, :create, :edit, :update, :destroy]
+    # add resources for users to the admin panel | define them at controllers/admin/users_controller.rb
+    resources :users, only: [:edit, :update, :destroy]
   end
   
   # add frontend resources for games | define them at controllers/games_controller.rb
