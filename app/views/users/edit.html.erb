@@ -1,0 +1,24 @@
+<%= render 'shared/page_title', title: "Dein Profil überarbeiten" %>
+
+<%= form_for @user do |f| %>
+          <p>
+            <%= f.label :name, "Benutzername" %>
+            <%= f.text_field :name %>
+          </p>
+          <p>
+            <%= f.label :email, "E-Mail" %>
+            <%= f.text_field :email %>
+          </p>
+          <p>
+            <%= f.label :password, "Passwort eingeben" %>
+            <%= f.password_field :password %>
+          </p>
+          <p>
+            <%= f.label :password_confirmation, "Passwort wiederholen" %>
+            <%= f.password_field :password_confirmation %>
+          </p>
+          <p>
+            <%= f.submit(@user.new_record? ? "Account erstellen" : "Account aktualisieren",
+                          class: "btn waves-effect waves-light purple lighten-1") %>
+          </p>
+        <% end %>
