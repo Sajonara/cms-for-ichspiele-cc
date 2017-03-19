@@ -3,7 +3,11 @@
 <div class="center-align">
   <ul>
     <% @users.each do |user| %>
-      <li><%= user.name %></li>
+      <li><%= link_to gravatar_for(user, size: '48'), user_path(user) %></li>
+      <li><%= link_to user.name.capitalize, user_path(user) %></li>
+      <li>Spiele: <%= user.games.count %></li>
     <% end %>
   </ul>
 </div>
+
+<%= will_paginate %>

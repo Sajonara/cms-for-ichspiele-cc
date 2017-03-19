@@ -14,4 +14,6 @@ class User < ApplicationRecord
   validates :password, presence: { message: "Du hast kein Passwort eingegeben." },
                        length: { minimum: 8, message: "Das Passwort muss mindestens 8 Zeichen lang sein." },
                        allow_nil: true
+
+  default_scope -> { order(name: :asc) }
 end
