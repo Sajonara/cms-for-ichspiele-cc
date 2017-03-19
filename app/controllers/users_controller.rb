@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "Herzlich Willkomemen #{@user.name} zu IchSpiele."
+      flash[:notice] = "Herzlich Willkommen #{@user.name} zu IchSpiele."
       redirect_to user_path(@user)
     else
       render 'pages/signup'
