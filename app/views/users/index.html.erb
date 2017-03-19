@@ -1,0 +1,9 @@
+<%= render 'shared/page_title', title: "Nutzerverzeichnis" %>
+
+<div class="center-align">
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= user.name %></li>
+    <% end %>
+  </ul>
+</div>
