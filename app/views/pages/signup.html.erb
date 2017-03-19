@@ -1,1 +1,44 @@
-Bei IchSpiele.cc einloggen.
+<%= render 'shared/errors', obj: @user, path: 'pages#signup' %>
+
+<div class="card">
+    <div class="card-content">
+      <%= render 'shared/page_title', title: "Anmelden/Registrieren", klasse: "center-align" %>      
+    </div>
+    <div class="card-tabs">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab"><a href="#anmelden">Anmelden</a></li>
+        <li class="tab"><a href="#registrieren">Registrieren</a></li>
+      </ul>
+    </div>
+    <div class="card-content grey lighten-4">
+      <div id="anmelden">
+        <p>
+          Du hast schon einen Account bei IchSpiele.cc? Dann melde Dich einfach an.
+        </p>
+      </div>
+      <div id="registrieren">
+        <p>Du möchtest einen Account bei uns? Dann registrier Dich jetzt.</p>
+        <%= form_for @user do |f| %>
+          <p>
+            <%= f.label :name, "Benutzername" %>
+            <%= f.text_field :name %>
+          </p>
+          <p>
+            <%= f.label :email, "E-Mail" %>
+            <%= f.text_field :email %>
+          </p>
+          <p>
+            <%= f.label :password, "Passwort eingeben" %>
+            <%= f.password_field :password %>
+          </p>
+          <p>
+            <%= f.label :password_confirmation, "Passwort wiederholen" %>
+            <%= f.password_field :password_confirmation %>
+          </p>
+          <p>
+            <%= f.submit "Account erstellen", class: "btn waves-effect waves-light purple lighten-1" %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>

@@ -22,4 +22,6 @@ Rails.application.routes.draw do
   resources :games, only: [:index, :show]
   # add frontend resources for news | define them at controllers/news_controller.rb
   resources :news, only: [:index, :show]
+  # add frontend resources for users | define them at controllers/users_controller.rb
+  resources :users, only: [:new, :create, :destroy]
 end
