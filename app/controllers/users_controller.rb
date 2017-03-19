@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    
+    # @user_games = @user.games.paginate / if I wanted to add games and pagination to the user profile
   end
   
   def edit
