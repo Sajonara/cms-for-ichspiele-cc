@@ -1,0 +1,8 @@
+<%= render 'shared/page_title', title: @article.title %>
+
+<p>
+  Veröffentlicht am <%= @article.created_at.strftime('%d.%m.%Y') %> von <%= @article.user.name %> <%= gravatar_for(@article.user, size: 45) %>
+</p>
+<p>
+  <%= @article.content %>
+</p>

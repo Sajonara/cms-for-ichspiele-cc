@@ -13,7 +13,7 @@ module ApplicationHelper
   end
   
   def admin_todo
-    admin_todo = ['news','games','users']
+    admin_todo = ['articles','games','users']
     return admin_todo
   end
   

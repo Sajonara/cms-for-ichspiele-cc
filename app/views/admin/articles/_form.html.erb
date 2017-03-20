@@ -1,0 +1,20 @@
+<%= render 'shared/errors', obj: @article, path: 'new_admin_articles_url' %>
+
+<%= form_for [:admin, @article] do |f| %>
+
+<p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</p>
+
+<p>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+</p>
+
+<p>
+  <%= f.submit(@article.new_record? ? "Nachricht hinzufügen" : "Nachricht aktualisieren",
+                  class: "btn waves-effect waves-light purple lighten-1") %>
+</p>
+
+<% end %>
