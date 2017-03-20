@@ -24,8 +24,8 @@
             <% end %>
           </td>
           <td>
-            <%= link_to admin_game_path(game), { :class => 'btn-floating purple lighten-1 waves-effect waves-light' }, method: :delete, data: {confirm: "Bist Du sicher, dass du #{article.title} löschen willst?"} do %>
-              <i class=" material-icons">delete</i>
+            <%= link_to admin_game_path(game), method: :delete, data: { confirm: "Bist Du sicher, dass du #{game.name} löschen willst?" } do %>
+              <span class="btn-floating purple lighten-1 waves-effect waves-light"><i class='material-icons'>delete</i></span>
             <% end %>
           </td>
         </tr>

@@ -18,7 +18,8 @@
 </p>
 
 <p>
-  <%= f.submit class: "btn waves-effect waves-light purple lighten-1" %>
+  <%= f.submit(@game.new_record? ? "Spiel hinzufügen" : "Spiel aktualisieren",
+                  class: "btn waves-effect waves-light purple lighten-1") %>
 </p>
 
 <% end %>

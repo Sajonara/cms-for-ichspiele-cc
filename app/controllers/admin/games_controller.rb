@@ -1,10 +1,7 @@
 class Admin::GamesController < ApplicationController
   before_action :set_game, only: [:edit, :update, :destroy]
   
-  def index
-    @games = Game.all
-  end
-  
+  # methods to create a new game
   def new
     @game = Game.new
   end
@@ -20,8 +17,8 @@ class Admin::GamesController < ApplicationController
     end
   end
   
+  # methods to edit an existing game
   def edit
-    
   end
   
   def update
@@ -33,10 +30,16 @@ class Admin::GamesController < ApplicationController
     end
   end
   
+  # method to delete a game
   def destroy
     @game.destroy
     flash[:notice] = "Du hast #{@game.name} erfolgreich gelöscht."
-    redirect_to games_path
+    redirect_to admin_games_path
+  end
+  
+  # method to list all games in the admin panel
+  def index
+    @games = Game.paginate(page: params[:page], per_page: 10) # list 10 games per page
   end
   
   private
@@ -45,8 +48,9 @@ class Admin::GamesController < ApplicationController
       @game = Game.find(params[:id])
     end
   
+    # only these parameters are allowed to being submitted via form
     def game_params
-      params.require(:game).permit(:name, :release_germany, :usk)
+      params.require(:game).permit(:name, :release_germany, :usk, :user_id)
     end
   
 end
