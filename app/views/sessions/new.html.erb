@@ -1,0 +1,15 @@
+<%= render 'shared/page_title', title: "Einloggen" %>
+
+<%= form_for(:session, url: login_path) do |f| %>
+  <p>
+    <%= f.label :email, "E-Mail" %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password, "Passwort eingeben" %>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.submit "Einloggen", class: "btn waves-effect waves-light purple lighten-1" %>
+  </p>
+<% end %>
