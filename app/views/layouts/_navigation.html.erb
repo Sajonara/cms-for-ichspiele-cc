@@ -2,8 +2,8 @@
   <div class="nav-wrapper purple lighten-1">
     <%= link_to("IchSpiele.cc", root_path, html_options = {class: "brand-logo"}) %>
     <ul class="right">
-      <li>Test</li>
-      <li>Test</li>
+      <li><%= link_to "Einloggen", login_path %></li>
+      <li><%= link_to "Ausloggen", logout_path, method: :delete %></li>
       <li>Test</li>
       <li>Test</li>
     </ul>
