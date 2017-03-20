@@ -17,9 +17,4 @@ module ApplicationHelper
     return admin_todo
   end
   
-  def admin_user
-    user = User.first
-    return user
-  end
-  
 end

@@ -9,6 +9,10 @@
   </head>
 
   <body class="<%= 'admin' if admin? %>">
+    <% if !is_admin? %>
+    Ich bin kein Admin-Nutzer
+    <% end %>
+    
     <% if admin? %>
       <%= render 'layouts/navigation_admin' %>
       <main>
