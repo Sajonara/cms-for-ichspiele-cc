@@ -10,7 +10,7 @@ class Admin::GamesController < ApplicationController
     @game = Game.new(game_params)
     @game.user = current_user
     if @game.save
-      flash[:notice] = "Du hast erfolgreich ein Spiel hinzugefügt."
+      flash[:success] = "Du hast #{@game.name} erfolgreich hinzugefügt."
       redirect_to game_path(@game)
     else
       render 'new'
@@ -23,7 +23,7 @@ class Admin::GamesController < ApplicationController
   
   def update
     if @game.update(game_params)
-      flash[:notice] = "Du hast das Spiel erfolgreich aktualisiert."
+      flash[:success] = "Du hast #{@game.name} erfolgreich aktualisiert."
       redirect_to game_path(@game)
     else
       render 'edit'
@@ -33,7 +33,7 @@ class Admin::GamesController < ApplicationController
   # method to delete a game
   def destroy
     @game.destroy
-    flash[:notice] = "Du hast #{@game.name} erfolgreich gelöscht."
+    flash[:success] = "Du hast #{@game.name} erfolgreich gelöscht."
     redirect_to admin_games_path
   end
   

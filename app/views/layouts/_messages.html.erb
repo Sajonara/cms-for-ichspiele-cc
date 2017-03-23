@@ -1,12 +1,19 @@
 <% if not flash.empty? %>
- <div class="card green lighten-4">
-    <div class="card-content">
-      <a href="#" class="right" data-dismiss="card">&#215;</a>
-      <ul>
-      <% flash.each do |name, msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  </div>
+  <% flash.each do |type, msg| %>
+    <% case type %>
+      <% when "success" %>
+        <% color = "green lighten-2" %>
+      <% when "danger" %>
+        <% color = "red lighten-2" %>
+      <% when "notice" %>
+        <% color = "blue lighten-2" %>
+      <% else %>
+        <% color = "black lighten-2" %>
+    <% end %>
+    <script>
+      $(function() {
+        Materialize.toast("<%= msg %>", 4000, "<%= color %>");
+      });
+    </script>    
+  <% end %>
 <% end %>

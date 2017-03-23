@@ -1,15 +1,14 @@
 <% if obj.errors.any? %>
-  <div class="card red lighten-4">
-    <div class="card-content">
-      <%= link_to( eval(path) + "/#", html_options = { class: 'right', data: { dismiss: 'card' } }) do %>
-        &#215;
-      <% end %>
-      <h5>Es sind folgende Fehler aufgetreten:</h5>
-      <ul>
-        <% obj.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+  <div class="row">
+    <div class="col s12">
+      <div class="card-panel">
+        <h6>Es sind folgende Fehler aufgetreten:</h6>
+        <ul class="red-text darken-2">
+          <% obj.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 <% end %>

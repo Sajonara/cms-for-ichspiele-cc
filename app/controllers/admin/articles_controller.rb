@@ -13,7 +13,7 @@ class Admin::ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
-      flash[:notice] = "Du hast die Nachricht erfolgreich hinzugefügt."
+      flash[:success] = "Du hast die Nachricht erfolgreich hinzugefügt."
       redirect_to article_path(@article)
     else
       render 'new'
@@ -26,7 +26,7 @@ class Admin::ArticlesController < ApplicationController
   
   def update
     if @article.update(article_params)
-      flash[:notice] = "Du hast die Nachricht erfolgreich aktualisiert."
+      flash[:success] = "Du hast die Nachricht erfolgreich aktualisiert."
       redirect_to article_path(@article)
     else
       render 'edit'
@@ -35,7 +35,7 @@ class Admin::ArticlesController < ApplicationController
   
   def destroy
     @article.destroy
-    flash[:notice] = "Du hast #{@article.title} erfolgreich gelöscht."
+    flash[:success] = "Du hast #{@article.title} erfolgreich gelöscht."
     redirect_to admin_article_path
   end
   

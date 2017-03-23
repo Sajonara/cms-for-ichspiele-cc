@@ -15,6 +15,9 @@
     
     <% if admin? %>
       <%= render 'layouts/navigation_admin' %>
+      <header>
+        <%= render 'layouts/navigation_admin_top' %>
+      </header>
       <main>
         <div class="container">
           <%= render 'layouts/messages' %>
