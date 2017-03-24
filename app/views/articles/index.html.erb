@@ -3,7 +3,7 @@
 Hier kommt die Übersicht aller Nachrichten hin.
 
 <ul>
-  <% @news.each do |news| %>
-    <li><%= link_to news.title, news_path(news) %></li>
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, article_path(article) %></li>
   <% end %>
 </ul>
