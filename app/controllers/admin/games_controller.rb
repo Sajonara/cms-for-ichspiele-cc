@@ -1,5 +1,6 @@
 class Admin::GamesController < ApplicationController
   before_action :set_game, only: [:edit, :update, :destroy]
+  before_action :require_admin
   
   # methods to create a new game
   def new

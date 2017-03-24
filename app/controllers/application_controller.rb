@@ -26,8 +26,15 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def require_same_user(obj)
+    if current_user != obj.user
+      flash[:danger] = "Du kannst nur deine eigenen Inhalte bearbeiten."
+      redirect_to root_path
+    end
+  end
+  
   def require_admin
-    if !is_admin?
+    if logged_in? && !is_admin?
       flash[:danger] = "Du benötigst Admin-Rechte, um diese Aktion auszuführen."
       redirect_to root_path 
     end
