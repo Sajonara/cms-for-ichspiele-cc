@@ -3,4 +3,6 @@ class Game < ApplicationRecord
   validates :usk, presence: true, numericality: { only_integer: true, less_than_or_equal_to: 99 }
   
   belongs_to :user
+  has_many :article_games
+  has_many :articles, through: :article_games
 end
