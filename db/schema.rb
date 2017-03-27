@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170325012056) do
+ActiveRecord::Schema.define(version: 20170325235000) do
 
   create_table "article_games", force: :cascade do |t|
     t.integer "article_id"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20170325012056) do
     t.datetime "updated_at",      null: false
     t.integer  "usk"
     t.integer  "user_id"
+  end
+
+  create_table "google_news_keyword_articles", force: :cascade do |t|
+    t.integer "google_news_keyword_id"
+    t.integer "article_id"
+  end
+
+  create_table "google_news_keywords", force: :cascade do |t|
+    t.string "news_keyword", limit: 40
   end
 
   create_table "users", force: :cascade do |t|

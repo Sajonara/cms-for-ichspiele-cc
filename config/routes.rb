@@ -31,4 +31,7 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show]
   # add frontend resources for users | define them at controllers/users_controller.rb
   resources :users, only: [:index, :show, :new, :create, :edit, :destroy]
+  
+  mount ActionCable.server => '/cable'
+  get '/chat', to: 'chatrooms#show'
 end

@@ -15,6 +15,9 @@
       <% if is_admin? %>
       <li><%= link_to "Admin", admin_root_path %></li>
       <% end %>
+      <% if logged_in? %>
+        <li><%= link_to "Chat", chat_path %></li>
+      <% end %>
       <li><%= link_to "News", articles_path %></li>
       <li><%= link_to "Spiele", games_path %></li>
       <!-- Dropdown Trigger -->

@@ -5,4 +5,6 @@ class Article < ApplicationRecord
   belongs_to :user
   has_many :article_games
   has_many :games, through: :article_games
+  has_many :google_news_keyword_articles
+  has_many :google_news_keywords, through: :google_news_keyword_articles
 end
