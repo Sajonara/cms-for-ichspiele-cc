@@ -10,9 +10,9 @@
 
   <body class="<%= 'admin' if admin? %>">
     <% if !is_admin? %>
-    Ich bin kein Admin-Nutzer
+    Ich bin kein Admin-Nutzer test
     <% end %>
-    
+
     <% if admin? %>
       <%= render 'layouts/navigation_admin' %>
       <header>
