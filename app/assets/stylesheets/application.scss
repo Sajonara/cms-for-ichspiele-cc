@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require chosen-compass
  *= require_tree .
  *= require_self
  */
@@ -21,19 +22,19 @@ body.admin {
  header, main, footer {
   padding-left: 300px;
   }
-  
+
   header {
     margin-top: -30px;
     .nav-wrapper {
       padding-right: 300px;
     }
   }
-  
+
   @media only screen and (max-width : 768px) {
     header, main, footer {
       padding-left: 0;
     }
-  } 
+  }
 }
 
 .avatar-middle { vertical-align: middle; }

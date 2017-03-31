@@ -13,6 +13,16 @@
 </p>
 
 <p>
+  <div class="input-field col s6">
+    <%= f.select :google_news_keyword_articles,
+    GoogleNewsKeyword.all.order('news_keyword ASC').map { |k| [k.news_keyword, k.id] },
+                 { include_blank: true },
+                 { class: 'chosen-select', multiple: true }
+    %>
+  </div>
+</p>
+
+<p>
   <%= f.submit(@article.new_record? ? "Nachricht hinzufügen" : "Nachricht aktualisieren",
                   class: "btn waves-effect waves-light purple lighten-1") %>
 </p>
