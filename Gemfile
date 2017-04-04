@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Use jquery-turbolinks compatibility layer
-gem 'jquery-turbolinks'
+# gem 'jquery-turbolinks'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -34,6 +34,9 @@ gem 'will_paginate', '3.1.0'
 # Use autocomplete
 gem 'compass-rails'
 gem 'chosen-rails'
+
+# User annotate to make useful comments to models and route files
+gem 'annotate', '~> 2.7.1'
 
 
 # Use Capistrano for deployment
