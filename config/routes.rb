@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root "pages#home"
 
+  patch '/next', to: 'pages#next'
+
   get '/impressum', to: 'pages#about'
   get '/anmelden', to: 'pages#signup'
   get '/hilfe', to: 'pages#help'
