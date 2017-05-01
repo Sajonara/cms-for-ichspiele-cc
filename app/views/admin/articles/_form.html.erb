@@ -14,13 +14,32 @@
 
 <p>
   <div class="input-field col s6">
-    <%= f.select :google_news_keyword_articles,
-    GoogleNewsKeyword.all.order('news_keyword ASC').map { |k| [k.news_keyword, k.id] },
-                 { include_blank: true },
-                 { class: 'chosen-select', multiple: true }
-    %>
+    <%= f.fields_for :google_news_keywords do |g| %>
+      <%= g.select :google_news_keyword_articles,
+      GoogleNewsKeyword.all.order('news_keyword ASC').map { |k| [k.news_keyword, k.id] },
+                   { include_blank: true },
+                   { class: 'chosen-select', multiple: true }
+      %>
+    <% end %>
   </div>
 </p>
+
+<ul class="collapsible" data-collapsible="accordion">
+  <li>
+    <div class="collapsible-header"><i class="material-icons">web</i> SEO</div>
+    <div class="collapsible-body">
+      <div class="input-field">
+        <%= f.label(:seo_title, "SEO-Titel") %>
+        <%= f.text_field :seo_title %>
+      </div>
+      <br>
+      <div class="input-field">
+        <%= f.label(:seo_description, "SEO-Text") %>
+        <%= f.text_area(:seo_description, placeholder: "Gib hier bitte den SEO-Text ein.") %>
+      </div>
+    </div>
+  </li>
+</ul>
 
 <p>
   <%= f.submit(@article.new_record? ? "Nachricht hinzufügen" : "Nachricht aktualisieren",
