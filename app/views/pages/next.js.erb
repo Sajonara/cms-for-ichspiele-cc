@@ -1,3 +1,13 @@
-$('.gallery-container').replaceWith(
-  "neuer inhalt"
-);
+var count = 1;
+var countIncrease = function() {
+  count++;
+}
+  $('.rechts').click(function(){
+
+  console.log('clicked');
+  console.log(count);
+  });
+  $('.rechts').html("<%= j render partial:  'pages/link_rechts' %>");
+  $('.gallery-container').html(count);
+
+  console.log(count);

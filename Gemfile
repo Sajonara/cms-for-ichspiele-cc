@@ -35,9 +35,6 @@ gem 'will_paginate', '3.1.0'
 gem 'compass-rails'
 gem 'chosen-rails'
 
-# User annotate to make useful comments to models and route files
-gem 'annotate', '~> 2.7.1'
-
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -55,6 +52,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # User annotate to make useful comments to models and route files
+  gem 'annotate', '~> 2.7.1'
+  gem 'better_errors', '~> 2.1', '>= 2.1.1'
 end
 
 group :production do
